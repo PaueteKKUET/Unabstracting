@@ -1,7 +1,7 @@
 package com.pauete.Unabstracting;
 
 import com.pauete.Unabstracting.operators.BasicOperations;
-import com.pauete.Unabstracting.operators.Operable;
+import com.pauete.Unabstracting.operators.BinaryOperation;
 
 public class Unabstracting {
 
@@ -9,7 +9,7 @@ public class Unabstracting {
 
         byte a = (byte) 13;
         byte b = (byte) 5;
-        Operable op = BasicOperations::dividir;
+        BinaryOperation op = BasicOperations::dividir;
 
         byte result = op.operate(a, b);
         System.out.println(Byte.toUnsignedInt(a));

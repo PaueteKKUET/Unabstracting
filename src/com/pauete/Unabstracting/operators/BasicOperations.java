@@ -26,23 +26,18 @@ public class BasicOperations {
     }
 
     public static byte dividir(byte a, byte b) {
-        /*
-        byte acc = 0b0;
-        while (a >= b) {
-            a = restar(a, b);
-            acc = sumar(acc, (byte) 0b1);
-        }
-        */
-
         return
                 b == 0
                 ? 0b0
-                : (byte) (0b0 + (
-                            a >= b
-                            ? sumar(dividir(restar(a, b), b), (byte) 0b1)
-                            : (byte) 0b0
-                        ));
+                : (
+                        a >= b
+                        ? sumar(dividir(restar(a, b), b), (byte) 0b1)
+                        : (byte) 0b0
+                );
+    }
 
+    public static byte modulo(byte a, byte b) {
+        return restar(a, dividir(a, b));
     }
 
 }
